@@ -1,2 +1,5 @@
 client.type.ts
+*.client.type.ts
 .DS_Store
+server.type.ts
+*.server.type.ts
