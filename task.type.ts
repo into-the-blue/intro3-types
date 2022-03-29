@@ -1,39 +1,39 @@
-import { IIntroImage } from './image.type';
-import { IDataMetadata } from './util.type';
-interface ITag extends IDataMetadata {
+import { IntroImage } from './image.type';
+import { DataMetadata } from './util.type';
+interface Tag extends DataMetadata {
   id: string;
   backgroundColor: string;
   title: string;
   type: '-1' | '0' | '1';
 }
-export interface TFeedback extends IDataMetadata {
+export interface Feedback extends DataMetadata {
   id: string;
   content: string;
   locked: boolean;
   targetId: string;
   tagId: string;
-  tag: ITag;
+  tag: Tag;
 }
-export interface ITaskItemSlot extends IDataMetadata {
+export interface TaskItemSlot extends DataMetadata {
   taskItemId: string;
-  feedbacks?: TFeedback[];
+  feedbacks?: Feedback[];
   content: string;
   finished: boolean;
   delayedTimes: number;
   delayedOn: string[];
 }
-export interface ITaskItem extends IDataMetadata {
+export interface TaskItem extends DataMetadata {
   taskId: string;
   title: string;
   content: string;
-  slots?: ITaskItemSlot[];
+  slots?: TaskItemSlot[];
   backgroundColor: string;
-  feedbacks?: TFeedback[];
+  feedbacks?: Feedback[];
 }
 
-export interface ITask extends IDataMetadata {
+export interface Task extends DataMetadata {
   title: string;
-  image: IIntroImage;
-  items?: ITaskItem[];
-  feedbacks?: TFeedback[];
+  image: IntroImage;
+  items?: TaskItem[];
+  feedbacks?: Feedback[];
 }

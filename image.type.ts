@@ -1,4 +1,4 @@
-import { IDataMetadata } from './util.type';
+import { DataMetadata } from './util.type';
 export interface AndroidImageColors {
   dominant?: string;
   average?: string;
@@ -28,21 +28,24 @@ export interface ImageColors {
   origin: AndroidImageColors | IOSImageColors;
 }
 
-export type TImageSource = 'unsplash' | 'local' | 'camera';
+export type IntroImageSource = 'unsplash' | 'local' | 'camera';
 
-type TUnsplashInfo = {
+type UnsplashMetadata = {
   color: string;
   rawUrl: string;
   authorName: string;
   portfolioUrl: string;
+  blurHash: string;
+  description: string;
+  origin: object;
 };
-export interface IIntroImage extends IDataMetadata {
-  source: TImageSource;
+export interface IntroImage extends DataMetadata {
+  source: IntroImageSource;
   // if it is local image, only save filename to DB, when retrieve from DB, generate path with DocumentDirectoryPath
   imageUrl: string;
   width: number;
   height: number;
   size?: number;
   mime?: string;
-  unsplashInfo?: TUnsplashInfo;
+  unsplashInfo?: UnsplashMetadata;
 }
