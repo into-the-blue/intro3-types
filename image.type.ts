@@ -30,14 +30,14 @@ export interface ImageColors {
 
 export type IntroImageSource = 'unsplash' | 'local' | 'camera';
 
-type UnsplashMetadata = {
+export type UnsplashMetadata = {
   color: string;
   rawUrl: string;
   authorName: string;
   portfolioUrl: string;
   blurHash: string;
   description: string;
-  origin: object;
+  origin: any;
 };
 export interface IntroImage extends DataMetadata {
   source: IntroImageSource;
